@@ -14,7 +14,9 @@ class Program
         foreach (var array in arrays)
         {
             foreach (var item in array)
-            Console.Write($"{item} ");       
+            {
+                Console.Write($"{item} ");
+            }       
         }
     }
 }
