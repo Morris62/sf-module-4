@@ -1,22 +1,17 @@
-﻿using System.Net;
-
-namespace Module_4;
+﻿namespace Module_4;
 
 class Program
 {
     static void Main(string[] args)
     {
-        var arrays = new int[3][];
-        arrays[0] = new[] {1,2};
-        arrays[1] = new[] {3,4,5};
-        arrays[2] = new[] {6,7,8,9};
+        var array = new int[] { 1, -2, 3, -4, 5, -6, 7, -8, 9, -10 };
 
-        foreach (var array in arrays)
+        var pos = 0;
+        foreach (var item in array)
         {
-            foreach (var item in array)
-            {
-                Console.Write($"{item} ");
-            }       
-        }
+            if (item > 0)
+                pos++;
+        }  
+        Console.Write($"{pos}");    
     }
 }
