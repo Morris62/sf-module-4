@@ -4,33 +4,20 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-
-        switch (Console.ReadLine())
+        int[,] array = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        Console.WriteLine($"Количество строк: {array.GetUpperBound(0)+1}");
+        Console.WriteLine($"Количество колонок: {array.GetUpperBound(1)+1}");
+        
+        for (int i = 0; i < array.GetUpperBound(0) + 1; i++)
         {
-            case "red":
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("Your color is red!");
-                break;
-            
-            case "green":
-                Console.BackgroundColor = ConsoleColor.Green;
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("Your color is green!");
-                break;
-            
-            case "cyan":
-                Console.BackgroundColor = ConsoleColor.Cyan;
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("Your color is cyan!");
-                break;
-            
-            default:
-                Console.BackgroundColor = ConsoleColor.Yellow;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Your color is yellow!");
-                break;
+            for (int j = 0; j < array.GetUpperBound(1) + 1; j++)
+                Console.Write($"{array[j, i]} ");
+            Console.WriteLine();
+        }
+
+        foreach (var item in array)
+        {
+            Console.Write($"{item} ");
         }
     }
 }
