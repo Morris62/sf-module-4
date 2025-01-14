@@ -1,17 +1,20 @@
-﻿namespace Module_4;
+﻿using System.Net;
+
+namespace Module_4;
 
 class Program
 {
     static void Main(string[] args)
     {
-        var arr = new[] { 5, 6, 9, 1, 2, 3, 4 };
+        var arrays = new int[3][];
+        arrays[0] = new[] {1,2};
+        arrays[1] = new[] {3,4,5};
+        arrays[2] = new[] {6,7,8,9};
 
-        int sum = 0;
-        
-        foreach (var item in arr)
+        foreach (var array in arrays)
         {
-            sum += item;
+            foreach (var item in array)
+            Console.Write($"{item} ");       
         }
-        Console.WriteLine("Сумма = " + sum);
     }
 }
