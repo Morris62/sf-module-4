@@ -4,14 +4,30 @@ class Program
 {
     static void Main(string[] args)
     {
-        var array = new int[] { 1, -2, 3, -4, 5, -6, 7, -8, 9, -10 };
-
-        var pos = 0;
-        foreach (var item in array)
+        int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
+        for (int i = 0; i <= arr.GetUpperBound(0); i++)
         {
-            if (item > 0)
-                pos++;
-        }  
-        Console.Write($"{pos}");    
+            for (int j = 0; j <= arr.GetUpperBound(1); j++)
+            {
+                for (int k = j + 1; k <= arr.GetUpperBound(1); k++)
+                {
+                    if (arr[i, j] > arr[i, k])
+                    {
+                        var temp = arr[i, j];
+                        arr[i, j] = arr[i, k];
+                        arr[i, k] = temp;
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i <= arr.GetUpperBound(0); i++)
+        {
+            Console.WriteLine();
+            for (int j = 0; j <= arr.GetUpperBound(1); j++)
+            {
+                Console.Write($"{arr[i, j]} ");
+            }
+        }
     }
 }
